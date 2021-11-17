@@ -6,6 +6,7 @@ import React from "react";
 import { ReactDOM } from "react-dom";
 import Pet from "./Pet";
 
+/*
 const App = () => {
   return React.createElement("div", {}, [
     React.createElement("h1", { id: "my-brand" }, "Adopt me"),
@@ -26,4 +27,16 @@ const App = () => {
     }),
   ]);
 };
+*/
+const App = () => {
+  return (
+    <div>
+      <h1>Adopt me</h1>
+      <Pet name="Luna" animal="Dog" breed="Havanese"></Pet>
+      <Pet name="Charlie" animal="Dog" breed="Poodle"></Pet>
+      <Pet name="Mia" animal="Dog" breed="Golden Retriever"></Pet>
+    </div>
+  );
+};
+
 ReactDOM.render(React.createElement(App), document.getElementById("root"));
