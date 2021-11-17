@@ -1,0 +1,52 @@
+<!--this app is created without using create-react-app. Everything is being added manually to better understand logic
+and structure of a React app-->
+
+<!--typing "html:5"+ enter gives a basic html file-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adopt me</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <!--inside the body we add:-->
+  <body>
+    <!--the div where react will render, it is the anchor point-->
+    <div id="root">Not rendered</div>
+    <!--the below package that allows to link to npm packages from the browser.It is going to load
+    the react package from unpkg into our browser
+    <script src="https://unpkg.com/react@17.0.1/umd/react.development.js"></script>
+        React requires two packages to render, React and react-dom. 
+        React is the high level API, it contains all the methods but doesn't contain a way to render itself.
+        React-dom is the library interacting with the DOM. 
+    <script src="https://unpkg.com/react-dom@17.0.1/umd/react-dom.development.js"></script>
+    -->
+    <script src="app.js"></script>
+
+    <!--the code below has been moved to app.js file
+    <script>
+      {
+        /*below I create the component "App" and then I render it inside the div with id "root". Component names always need to
+        start with capital letter*/
+      }
+      const App = () => {
+        {
+          /*inside the curly brakets after React.createElement we can put attributes and arias. 
+          When using JSX, this transpiles automatically into createElement calls. */
+        }
+        return React.createElement(
+          "div",
+          {},
+          React.createElement("h1", { id: "my-brand" }, "Adopt me")
+        );
+      };
+      ReactDOM.render(
+        React.createElement(App),
+        document.getElementById("root")
+      );
+    </script>
+    -->
+  </body>
+</html>
