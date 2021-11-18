@@ -43,7 +43,14 @@ const SearchParams = () => {
   }
   return (
     <div className="search-params">
-      <form>
+      {/*requestPets() is not fired with onClick event on the submit button as the form can be submitted by the 
+        //user also by pressing the enter key. By firing requestPets with onSubmit on the form we also capture the clicks on the submit button. */}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          requestPets();
+        }}
+      >
         <label htmlFor="location">
           Location
           {/*The onChange event in React detects when the value of an input element changes. */}
