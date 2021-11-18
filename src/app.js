@@ -1,9 +1,6 @@
-//1. the component "Pet" receives information "props" from his parent component "App"
-//Props follow the principle of one way data flow: information can be passed down from a parent to a child but not vice-versa
-//2. running "npm init" inside the terminal adds the package.json file. This keeps track of all the dependencies a project needs in order to run.
+// running "npm init" inside the terminal adds the package.json file. This keeps track of all the dependencies a project needs in order to run.
 //normally when we run "npm install" all the dependencies listed in package.json are added to the modules folder.
 import { render } from "react-dom";
-//import Pet from "./Pet";
 import SearchParams from "./SearchParams";
 
 /*
