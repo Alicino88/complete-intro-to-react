@@ -1,4 +1,3 @@
-//import React from "react";
 /*
 const Pet = (props) => {
   return React.createElement("div", {}, [
@@ -12,12 +11,24 @@ const Pet = (props) => {
 /*When the jsx below runs through Babel and Parcel, it outputs the code above.
  */
 const Pet = (props) => {
+  const { name, animal, breed, images, location, id } = props;
+  //if nothin comes back fom the API we display the following pic
+  let hero = "http://pets-images.dev-apis.com/pets/none.jpg";
+  //otherwise we display the first image
+  if (images.length) {
+    hero = images[0];
+  }
+
   return (
-    <div>
-      <h2>{props.name}</h2>
-      <h3>{props.animal}</h3>
-      <h3>{props.breed}</h3>
-    </div>
+    <a href={`/details/${id}`} className="pet">
+      <div className="image-container">
+        <img src={hero} alt={name} />
+      </div>
+      <div className="info">
+        <h1>{name}</h1>
+        <h2>{`${animal} — ${breed} — ${location}`}</h2>
+      </div>
+    </a>
   );
 };
 
