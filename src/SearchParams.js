@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 //import custom hook useBreedList below
 import useBreedList from "./useBreedList";
-import Pet from "./Pet";
+import Results from "./Results";
 
 //in JSX "class" attribute becomes "className" and "for" attribute "htmlFor"
 //useState:
@@ -95,16 +95,9 @@ const SearchParams = () => {
         </label>
         <button>Submit</button>
       </form>
-      {pets.map((pet) => {
-        return (
-          <Pet
-            name={pet.name}
-            animal={pet.animal}
-            bredd={pet.breed}
-            key={pet.id}
-          ></Pet>
-        );
-      })}
+      {/*the pets prop, that is an array of objects, is passed down to Results.js component, there the array is mapped and for each pet
+      we again pass down props */}
+      <Results pets={pets} />
     </div>
   );
 };
