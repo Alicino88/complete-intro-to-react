@@ -4,7 +4,7 @@ import { render } from "react-dom";
 import SearchParams from "./SearchParams";
 import { StrictMode } from "react";
 import Details from "./Details";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 /*
 const App = () => {
@@ -32,12 +32,18 @@ const App = () => {
 const App = () => {
   return (
     <div>
-      <h1>Adopt me</h1>
       <Router>
+        <header>
+          <Link to="/">Adopt Me!</Link>
+        </header>
         <Switch>
+          {/*:id is a variable */}
           <Route path="/details/:id">
             <Details />
           </Route>
+          {/*the hp displays the search box with the Results component containing Pet component.
+          once clicking on  <Link to={`/details/${id}`}> inside Pet component the user is redirected to the Details page.
+          The id is passed as a prop to the Details.js component where we use Useparams hook*/}
           <Route path="/">
             <SearchParams />
           </Route>
