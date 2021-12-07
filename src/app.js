@@ -1,5 +1,3 @@
-// running "npm init" inside the terminal adds the package.json file. This keeps track of all the dependencies a project needs in order to run.
-//normally when we run "npm install" all the dependencies listed in package.json are added to the modules folder.
 import { render } from "react-dom";
 import SearchParams from "./SearchParams";
 import { StrictMode } from "react";
@@ -37,11 +35,14 @@ const App = () => {
           <Link to="/">Adopt Me!</Link>
         </header>
         <Switch>
-          {/*:id is a variable */}
+          {/*:id is a variable 
+          1)when clicking on the single Pet component, we go to the link to={`/details/${id}`}. 
+          2)The route with the path path="/details/:id" gets "activated" and Details component is shown
+          3) useParams hook, inside the Details allows to use the parameter id*/}
           <Route path="/details/:id">
             <Details />
           </Route>
-          {/*the hp displays the search box with the Results component containing Pet component.
+          {/*the hp displays the search box with the Results component (inside SearchParams.js component) containing Pet component.
           once clicking on  <Link to={`/details/${id}`}> inside Pet component the user is redirected to the Details page.
           The id is passed as a prop to the Details.js component where we use Useparams hook*/}
           <Route path="/">
